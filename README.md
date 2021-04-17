@@ -18,10 +18,10 @@
 </p>
 
 <h3>Some Screen-Shots of our site</h3>
-[!alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss1.png)
+![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss1.png)
 <br/>
-[!alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss2.png)
+![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss2.png)
 <br/>
-[!alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss3.png)
+![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss3.png)
 <br/>
-[!alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss4.png)
+![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss4.png)
