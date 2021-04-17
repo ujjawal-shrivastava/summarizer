@@ -21,11 +21,6 @@
 <p align="center">
   <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss1.png" width="350" title="hover text">
   <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss2.png" width="350" alt="accessibility text">
+  <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss3.png" width="350" title="hover text">
+  <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss4.png" width="350" title="hover text">
 </p>
-![alt text]()
-<br/>
-![alt text]()
-<br/>
-![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss3.png)
-<br/>
-![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss4.png)
