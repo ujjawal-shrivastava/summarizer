@@ -113,6 +113,7 @@
     width:2%;
     height:2%;
     margin-top:-20%;
+    cursor:pointer;
     margin-left:-2%;
 }
 .settings
@@ -229,7 +230,7 @@
     border:2px solid black;
     width:29%;
     border-bottom:none;
-    margin-bottom:-5%;
+    margin-bottom:-2.8%;
     margin-right:-53%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -255,4 +256,13 @@
     transition:0.4s ease;
     cursor: pointer;
     border-radius: 5px;
+}
+.textL-disp
+{
+    background:rgb(165, 167, 165);
+    margin-bottom:-5%;
+    margin-left:-80%;
+    width:8%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }

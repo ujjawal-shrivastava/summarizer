@@ -62,10 +62,9 @@
     font-size:2rem;
     position:absolute;
     top:100%;
-    right:0%;
-    transform:scale(0.4);
+    right:5%;
+    transform:scale(1);
     font-family: 'PT Mono', monospace;
-    opacity:0;
     width:30%;
 }
 .Home_3 > .Homebx_1
@@ -225,7 +224,7 @@
 {
     position:absolute;
     left:28%;
-    top:550%;
+    top:560%;
     color:black;
     font-size:6rem;
     transform: rotate(-5deg);

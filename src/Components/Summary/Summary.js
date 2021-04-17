@@ -17,6 +17,7 @@ const Summary = ({moveup}) => {
     const [Settingflag,toggleSet]=useState(false);
     const [DisplayContext,ChangeDisplay]=useState(1);
     const [Disable,ToggleDisable]=useState(false);
+    const [TextPointer,ShiftPointer]=useState(0);
     const [TextAreaValue,UpdateValue]=useState('');
     const [InfoDisplay,UpdateDisplay]=useState({
         info:'No Info as of yet!',
@@ -28,12 +29,10 @@ const Summary = ({moveup}) => {
     });
     const [result,UpdateResult]=useState({
         text:{
-            summary:"You'll get your refined text right here. Select from the options what you're"
-            +" upto and press submit to get your filtered text."+
-            "You'll get your refined text right here. Select from the options what you're"
-            +" upto and press submit to get your filtered text.",
-            paraphrase:"You'll get your refined text right here. Select from the options what you're"
-            +" upto and press submit to get your filtered text."
+            summary:"You'll get your refined text right here. Select from the options the functionality"
+            +" you would like to use and to use the summarizer choose summarize and press process to get your summarized text.",
+            paraphrase:"You'll get your refined text right here. Select from the options the functionality"
+            +" you would like to use and to use the paraphraser choose paraphrase and press process to get your paraphrased text."
         },
         status:false
     });
@@ -59,8 +58,8 @@ const Summary = ({moveup}) => {
     }
 
     const HandleChange=(evt)=>{
-        if((Settings.paraphrase&&evt.target.value.length>50)||
-            (Settings.summarize&&evt.target.value.length>300)){
+        if((Settings.paraphrase&&evt.target.value.length>150)||
+            (Settings.summarize&&evt.target.value.length>600)){
             if(evt.target.value.length>=TextAreaValue.length){
                 ToggleDisable(true);
                 ToggleDisplay("Word limit reached!");
@@ -68,10 +67,12 @@ const Summary = ({moveup}) => {
                     ToggleDisable(false);
                 },1000);
             }
+            ShiftPointer(evt.target.value.length);
             UpdateValue(evt.target.value.trim());
             return;
         }
         if(evt.target.value.trim()){
+            ShiftPointer(evt.target.value.length);
             return UpdateValue(evt.target.value.trim());
         }
     }
@@ -90,20 +91,60 @@ const Summary = ({moveup}) => {
     }
 
     const HandleSubmit=()=>{
+        console.log(TextAreaValue);
+        if(!TextAreaValue){
+            return;
+        }
         if(!(Settings.summarize||Settings.paraphrase)){
             return ToggleDisplay("Select Some mode to proceed.")
         }
-        if(!TextAreaValue){
-            return;
+        if((Settings.paraphrase&&TextAreaValue.length>150)||
+        (Settings.summarize&&TextAreaValue.length>600)){
+            return ToggleDisplay("Reduce the text characters.");
         }
         if(loading){
             return ToggleDisplay("Your request is being processed!");
         }
         toggleLoader(true);
+        if(Settings.summarize&&Settings.paraphrase){
+            axios.post("https://summarizer-api-coderbros.herokuapp.com/summarize",{
+                text:TextAreaValue,
+                mode:"SUMMARY"
+            })
+            .then(response=>{
+                UpdateResult({
+                    text:{
+                        summary:response.data.processed_text,
+                        paraphrase:""
+                    },status:false
+                });
+                axios.post("https://summarizer-api-coderbros.herokuapp.com/summarize",{
+                    text:TextAreaValue,
+                    mode:"PARAPHRASE"
+                })
+                .then(response=>{
+                    toggleLoader(false);
+                    UpdateResult({
+                        text:{
+                            summary:result.text.summary,
+                            paraphrase:response.data.processed_text
+                        },status:true
+                    }); console.log(result);
+                })
+                .catch(err=>{
+                    toggleLoader(false);
+                    return ToggleDisplay("Opps! Some error has occured! Try again!");
+                })
+            })
+            .catch(err=>{
+                toggleLoader(false);
+                return ToggleDisplay("Opps! Some error has occured! Try again!");
+            });
+            return;
+        }
         axios.post("https://summarizer-api-coderbros.herokuapp.com/summarize",{
             text:TextAreaValue,
-            mode:Settings.summarize&&Settings.paraphrase?"BOTH":Settings.summarize?
-            "SUMMARY":"PARAPHRASE"
+            mode:Settings.summarize?"SUMMARY":"PARAPHRASE"
         })
         .then(response=>{
             toggleLoader(false);
@@ -187,8 +228,12 @@ const Summary = ({moveup}) => {
                     }}onClick={()=>ChangeDisplay(1)} >Summary</h1>
                     <h1 style={{
                         background:DisplayContext==0?"black":"transparent",
-                        color:DisplayContext==0?"white":"black"
-                    }} onClick={()=>ChangeDisplay(0)}>Parraphrased</h1>
+                        color:DisplayContext==0?"white":"black",
+                        textAlign:"center"
+                    }} onClick={()=>ChangeDisplay(0)}>Paraphrase</h1>
+                </div>
+                <div className="textL-disp">
+                    {`${TextPointer}/${Settings.paraphrase?150:600}`}
                 </div>
                 <div className="summary_2-1">
                     <textarea placeholder="Type or paste your text here."
@@ -211,7 +256,17 @@ const Summary = ({moveup}) => {
                         }
                         ToggleSettings();
                     }}/>
-                    <img src={CopyIcon} alt="" className="Copy"/>
+                    <img src={CopyIcon} alt="" className="Copy"
+                    onClick={()=>{
+                        if(!result.status){
+                            return;
+                        }
+                        if(DisplayContext==1){
+                            navigator.clipboard.writeText(result.text.summary);
+                        }else{
+                            navigator.clipboard.writeText(result.text.paraphrase);
+                        }ToggleDisplay("Text has been copied to Clipboard.");
+                    }}/>
                 </div>
                 <button onClick={HandleSubmit}>Process</button>
             </div>
@@ -219,12 +274,12 @@ const Summary = ({moveup}) => {
                 <div>
                     <input type="checkbox" defaultChecked={Settings.summarize}
                     onChange={()=>UpdateSettings({...Settings,summarize:!Settings.summarize})}/>
-                    <h2>Summarize[300 Chars]</h2>
+                    <h2>Summarize[500 Chars]</h2>
                 </div>
                 <div>
                     <input type="checkbox" defaultChecked={Settings.paraphrase}
                     onChange={()=>UpdateSettings({...Settings,paraphrase:!Settings.paraphrase})}/>
-                    <h2>Paraphrase[50 Chars]</h2>
+                    <h2>Paraphrase[100 Chars]</h2>
                 </div>
             </div>
             <div className="loaderbars" style={{visibility:loading?"visible":"hidden"}}>

@@ -59,8 +59,7 @@ const Menu = ({flag,toggle,toggleScroll}) => {
             <img src={Star} alt="Menu" onClick={ToggleMenu} ref={ref1}/>
             <ul ref={ref2}>
                 <li><a href="/" onClick={ToggleMenu}>Home</a></li>
-                <li><a href="/summary" onClick={ToggleMenu}>Story Mode</a></li>
-                <li>Vocabulary Mode</li>
+                <li><a href="/summary" onClick={ToggleMenu}>Battlefield</a></li>
             </ul>
         </div>
     )
