@@ -18,10 +18,10 @@
 </p>
 
 <h3>Some Screen-Shots of our site</h3>
-![Screenshot from 2021-04-18 03-17-47](https://user-images.githubusercontent.com/61937872/115129537-8369e280-a004-11eb-9606-31f9a21a7819.png)
+[!alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss1.png)
 <br/>
-![Screenshot from 2021-04-18 03-21-07](https://user-images.githubusercontent.com/61937872/115129540-8d8be100-a004-11eb-91fa-cdfcf7fa100b.png)
+[!alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss2.png)
 <br/>
-![Screenshot from 2021-04-18 03-24-14](https://user-images.githubusercontent.com/61937872/115129543-92e92b80-a004-11eb-8294-1ba5e32b3d14.png)
+[!alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss3.png)
 <br/>
-![Screenshot from 2021-04-18 03-19-08](https://user-images.githubusercontent.com/61937872/115129544-967cb280-a004-11eb-946b-ae7819e4fba8.png)
+[!alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss4.png)
