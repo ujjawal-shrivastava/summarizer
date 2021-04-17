@@ -18,9 +18,13 @@
 </p>
 
 <h3>Some Screen-Shots of our site</h3>
-![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss1.png)
+<p align="center">
+  <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss1.png" width="350" title="hover text">
+  <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss2.png" width="350" alt="accessibility text">
+</p>
+![alt text]()
 <br/>
-![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss2.png)
+![alt text]()
 <br/>
 ![alt text](https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss3.png)
 <br/>
