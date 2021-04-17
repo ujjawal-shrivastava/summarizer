@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Kaushan+Script&family=Seaweed+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Julius+Sans+One&family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.summary
+{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+.summary_1
+{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    margin:5%;
+    font-family: 'Julius Sans One', sans-serif;
+}
+.summary_1 > img
+{
+    width:30%;
+    height:30%;
+    margin-top:-4%;
+}
+.summary_1 > h1:nth-child(2)
+{
+    font-size:3rem;
+}
+.summary_2
+{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    margin:5%;
+    font-family: 'Julius Sans One', sans-serif;
+    margin-top:5%;
+    font-size:1.5rem;
+}
+.summary_2 > h1
+{
+    margin-bottom:5%;
+    margin-top:5%;
+}
+.summary_2-1
+{
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    margin:5%;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.summary_2-1 > textarea
+{
+    width:45%;
+    font-size:1.4rem;
+    height:400px;
+    outline:none;
+    border-right:4px solid grey;
+}
+.summary_2-1 > div 
+{
+    width:45%;
+    height:403px;
+    background:white;
+    border:1px solid black;
+    /* display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center; */
+    overflow-y :scroll;
+    overflow-x:hidden;
+}
+.summary_2-1 > div > p
+{
+    margin:1%;
+}
+.loaderbars
+{
+    width:40%;
+    display:flex;
+    position:absolute;
+    right:9%;
+    bottom:-75%;
+    flex-direction: column;
+    align-items:left;
+    justify-content:left;
+}
+.loaderbars > img
+{
+    margin-top:1%;
+    height:25px;
+    transition:0.5s ease;
+}
+.bar1
+{
+    width:90%;
+}
+.bar2
+{
+    width:70%;
+}
+.bar3
+{
+    width:50%;
+}
+.Copy
+{
+    width:2%;
+    height:2%;
+    margin-top:-20%;
+    margin-left:-2%;
+}
+.settings
+{
+    width:2%;
+    height:2%;
+    margin-top:-27%;
+    margin-left:1%;
+    cursor:pointer;
+    transition:0.5s ease;
+}
+.settings:hover
+{
+    transform:rotate(15deg);
+}
+.setting-box
+{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    bottom:-72%;
+    right:6%;
+    transform:scale(0);
+    justify-content:center;
+    align-items:center;
+    border:2px solid black;
+    border-radius:5px;
+    padding:1%;
+    width:30%;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    color:white;
+    text-shadow: 1px 1px 1px black;
+}
+.setting-box > div:nth-child(1)
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:3%;
+    width:100%;
+    cursor:pointer;
+}
+.setting-box > div:nth-child(1) > input
+{
+    transform:scale(1.2);
+    cursor:pointer;
+}
+.setting-box > div:nth-child(1) > h2
+{
+    margin:1%;
+}
+.setting-box > div:nth-child(2)
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:1%;
+    width:100%;
+    margin-left:-3%;
+}
+.setting-box > div:nth-child(2) > input
+{
+    transform:scale(1.2);
+    cursor:pointer;
+}
+.summary_2 > button
+{
+    width:14%;
+    font-size:2.1rem;
+    background:rgb(2, 153, 2);
+    color:white;
+    border:none;
+    box-shadow: 2.1px 2.1px 2.1px black;
+    transition:0.5s ease;
+    cursor:pointer;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.summary_2 > button:hover
+{
+    box-shadow: 1px 1px 1px black;
+}
+.infoprov
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.5rem;
+    border:4px solid red;
+    position:fixed;
+    width:50%;
+    background-color: white;
+    bottom:5%;
+    opacity:0.9;
+    left:2%;
+    z-index:10000;
+    border-radius: 5px;
+    box-shadow:4px 4px 4px black;
+}
+.infoprov > img
+{
+    width:8%;
+    height:8%;
+}
+.sm-cat
+{
+    display:flex;
+    font-size:0.8rem;
+    justify-content:center;
+    align-items:center;
+    border:2px solid black;
+    width:29%;
+    border-bottom:none;
+    margin-bottom:-5%;
+    margin-right:-53%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+.sm-cat > h1
+{
+    margin:1%;
+}
+.sm-cat > h1:nth-child(1)
+{
+    margin-right:2%;
+    text-align: center;
+    border-radius: 5px;
+    transition:0.4s ease;
+    cursor: pointer;
+    width:43%;
+}
+.sm-cat > h1:nth-child(2)
+{
+    margin-left:2%;
+    width:46%;
+    transition:0.4s ease;
+    cursor: pointer;
+    border-radius: 5px;
+}

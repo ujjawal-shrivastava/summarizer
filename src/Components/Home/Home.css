@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Kaushan+Script&family=Seaweed+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Julius+Sans+One&family=PT+Mono&display=swap');
+.Home
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+.Home_1
+{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-left:5%;
+    margin-top:5%;
+}
+.Home_2
+{
+    /* font-family: 'Seaweed Script', cursive; */
+    font-family: 'Kaushan Script', cursive;
+    /* border:2px solid black; */
+    transform:rotate(-5deg);
+    margin-top:-3%;
+}
+.Home_2 > h1:nth-child(1)
+{
+    font-size:3rem;
+    margin-bottom:-10%;
+}
+.Home_2 > h1:nth-child(2)
+{
+    font-size:6rem;
+    margin-bottom:-10%;
+}
+.Home_2 > h1:nth-child(3)
+{
+    font-size:6rem;
+}
+.Home_1 > img
+{
+    margin:1%;
+    margin-left:7%;
+    margin-top:-1%;
+    width:40%;
+    height:40%;
+}
+.Home_3
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    margin:3%;
+    margin-top:15%;
+}
+.Home_3 > .Homehdr_1
+{
+    font-size:2rem;
+    position:absolute;
+    top:100%;
+    right:0%;
+    transform:scale(0.4);
+    font-family: 'PT Mono', monospace;
+    opacity:0;
+    width:30%;
+}
+.Home_3 > .Homebx_1
+{
+    width:35%;
+    text-decoration: underline;
+    text-align:left;
+    font-family: 'Noto Sans JP', sans-serif;
+    border:4px solid blue;
+    display:flex;
+    flex-direction: column;
+    padding:2%;
+    position:absolute;
+    top:100%;
+    left:5%;
+    transition:0.4s ease;
+    /* background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%); */
+    border-radius:5px;
+    font-size:1.6rem;
+}
+.Home_3 > .HomeImg_1
+{
+    position:absolute;
+    transform:scale(0.5);
+    top:72%;
+    right:27.8%;
+}
+.Home_3 > .txt_flx
+{
+    display:flex;
+    flex-direction:column;
+    font-size:3rem;
+    position:absolute;
+    top:135%;
+    right:35%;
+    justify-content:center;
+    align-items:center;
+}
+.Home_3 > .txt_flx > span
+{
+    margin-top:3%;
+    margin-bottom:3%;
+    font-family: 'Dela Gothic One', cursive;
+}
+.Home_3 > .Homehdr_2
+{
+    font-size:2rem;
+    position:absolute;
+    top:225%;
+    left:3%;
+    font-family: 'PT Mono', monospace;
+    transform:scale(1);
+    width:30%;
+}
+.Home_3 > .Homebx_2
+{
+    width:30%;
+    text-decoration: underline;
+    text-align:left;
+    font-family: 'Noto Sans JP', sans-serif;
+    border:4px solid blue;
+    padding:2%;
+    position:absolute;
+    top:222%;
+    right:10%;
+    border-radius:5px;
+    font-size:1.6rem;
+}
+.HomeImg_2
+{
+    position:absolute;
+    top:-556%;
+    left:-5%;
+    transform:scale(0.1);
+}
+.Home_4
+{
+    margin-top:101%;
+    display:flex;
+    flex-direction:column;
+}
+.Home_4  > h1
+{
+    font-size:3rem;
+    text-align: center;
+    margin:5%;
+    margin-top:10%;
+    margin-bottom:5%;
+    transition:0.9s ease;
+    cursor:pointer;
+    font-family: 'Julius Sans One', sans-serif;
+}
+.Home_4  > h1:hover
+{
+    color:red;
+    text-shadow:2px 2px 2px black;
+}
+.Home_4 > .Home4bx1
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.Home_4 > .Home4bx1 > h1
+{
+    font-family: 'Kaushan Script', cursive;
+    font-size:3rem;
+    transition:0.4s ease;
+    transform: rotate(-5deg);
+    margin:4%;
+    cursor:pointer;
+}
+.Home_4 > .Home4bx1 > h1:hover
+{
+    transform:scale(1.2);
+}
+.Home_4 > .Home4bx1 > img
+{
+    width:40%;
+    height:40%;
+}
+.Home_4 > .Home4bx2
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+.Home_4 > .Home4bx2 > h1
+{
+    font-family: 'Kaushan Script', cursive;
+    font-size:3rem;
+    transform: rotate(-5deg);
+    margin:4%;
+    cursor:pointer;
+    transition:0.4s ease;
+}
+.Home_4 > .Home4bx2 > h1:hover
+{
+    transform:scale(1.2);
+    transform:translateY("-10%");
+}
+.Home_4 > .Home4bx2 > img
+{
+    width:40%;
+    height:40%;
+}
+.Home_5
+{
+    margin-top:5%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.Home_5 > h1
+{
+    position:absolute;
+    left:28%;
+    top:550%;
+    color:black;
+    font-size:6rem;
+    transform: rotate(-5deg);
+    z-index:100;
+    transition:0.4s ease;
+    text-shadow:2px 2px 2px red;
+    cursor:pointer;
+    font-family: 'Kaushan Script', cursive;
+}
+.Home5Img1
+{
+    opacity: 0.5;
+}
+.Home_5 > h1:hover
+{
+    color:yellow;
+}
