@@ -1,6 +1,6 @@
 <h1>The Summarizing Samurai</h1>
-
-<h3>Welcome to your one stop destination to increase your productivity.</h3>
+<br/>
+<h2>Welcome to your one stop destination to increasing your productivity.</h2>
 <p>
   Running out of time? and still got a lot text to read? Well,worry not
   people cause we've got something for ya! The Summarizing Samurai is a
@@ -10,18 +10,25 @@
   you'd wanna have and Voila! Get in within seconds or so.
 </p>
 <br/>
-<br/>
-<h3>People to which this site might come in handy:</h3>
+<h2>People to which this site might come in handy:</h2>
 <p>Well, we'd say literally everyone as everybody wants to get their work
   done in no time and everybody would love to do so efficiently obviously,
   without much efforts and so that is where our site comes to rescue.
 </p>
-
-<h3>Some Screen-Shots of our site</h3>
-![Screenshot from 2021-04-18 03-17-47](https://user-images.githubusercontent.com/61937872/115129537-8369e280-a004-11eb-9606-31f9a21a7819.png)
 <br/>
-![Screenshot from 2021-04-18 03-21-07](https://user-images.githubusercontent.com/61937872/115129540-8d8be100-a004-11eb-91fa-cdfcf7fa100b.png)
+<h2>Some Screen-Shots of our site</h2>
+<p align="center">
+  <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss1.png" width="350" title="hover text">
+  <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss2.png" width="350" alt="accessibility text">
+  <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss3.png" width="350" title="hover text">
+  <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss4.png" width="350" title="hover text">
+</p>
 <br/>
-![Screenshot from 2021-04-18 03-24-14](https://user-images.githubusercontent.com/61937872/115129543-92e92b80-a004-11eb-8294-1ba5e32b3d14.png)
+<h2>Local Installation procedure</h2>
+<h3>To run the site locally please follow these steps:</h3>
+<p>1.)Clone the github repo into any folder of your choice.[Suppose you created a folder <code>test</code>].</p>
+<p>2.)<code>cd</code> into that folder and after that <code>cd</code> into the folder <code>summarizer</code> [Do this step as <code>cd test</code> after that <code>cd summarizer</code> on your terminal/cmd].</p>
+<p>3.)Once you're inside the <code>summarizer</code> folder, run the command <code>npm i</code> and wait for a few seconds.</p>
+<p>4.)After installation, run <code>npm start</code> to run the app.</p>
 <br/>
-![Screenshot from 2021-04-18 03-19-08](https://user-images.githubusercontent.com/61937872/115129544-967cb280-a004-11eb-946b-ae7819e4fba8.png)
+<h1>Enjoy, and please provide feedback!</h1>
