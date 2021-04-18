@@ -23,10 +23,6 @@ const Summary = ({moveup}) => {
         info:'No Info as of yet!',
         status:false
     });
-    const [Settings,UpdateSettings]=useState({
-        summarize:true,
-        paraphrase:false
-    });
     const [result,UpdateResult]=useState({
         text:{
             summary:"You'll get your refined text right here. Select from the options the functionality"
@@ -40,26 +36,29 @@ const Summary = ({moveup}) => {
     const ref2=useRef(null);
     const ref3=useRef(null);
     const ref4=useRef(null);
+    const ref5=useRef(null);
 
     const ToggleSettings=()=>{
         toggleSet(!Settingflag);
         if(!Settingflag){
             gsap.to(ref4.current,{
-                scale:1,
-                delay:0.5,
-                duration:0.6
+                width:"30%",
+                fontSize:"1.4rem",
+                delay:0,
+                duration:0.1
             });return;
         }
         gsap.to(ref4.current,{
-            scale:0,
-            delay:0.5,
-            duration:0.6
+            width:"0%",
+            fontSize:"0rem",
+            delay:0,
+            duration:0.1
         });
     }
 
     const HandleChange=(evt)=>{
-        if((Settings.paraphrase&&evt.target.value.length>150)||
-            (Settings.summarize&&evt.target.value.length>600)){
+        if((DisplayContext==0&&evt.target.value.length>150)||
+            (DisplayContext==1&&evt.target.value.length>600)){
             if(evt.target.value.length>=TextAreaValue.length){
                 ToggleDisable(true);
                 ToggleDisplay("Word limit reached!");
@@ -91,80 +90,44 @@ const Summary = ({moveup}) => {
     }
 
     const HandleSubmit=()=>{
-        console.log(TextAreaValue);
         if(!TextAreaValue){
             return;
         }
-        if(!(Settings.summarize||Settings.paraphrase)){
+        if(DisplayContext==1&&DisplayContext==0){
+            return ToggleDisplay("Both mode is not supported yet.");
+        }
+        if(!(DisplayContext==1||DisplayContext==0)){
             return ToggleDisplay("Select Some mode to proceed.")
         }
-        if((Settings.paraphrase&&TextAreaValue.length>150)||
-        (Settings.summarize&&TextAreaValue.length>600)){
+        if((DisplayContext==0&&TextAreaValue.length>150)||
+        (DisplayContext==1&&TextAreaValue.length>600)){
             return ToggleDisplay("Reduce the text characters.");
         }
         if(loading){
             return ToggleDisplay("Your request is being processed!");
         }
         toggleLoader(true);
-        if(Settings.summarize&&Settings.paraphrase){
-            axios.post("https://summarizer-api-coderbros.herokuapp.com/summarize",{
-                text:TextAreaValue,
-                mode:"SUMMARY"
-            })
-            .then(response=>{
-                UpdateResult({
-                    text:{
-                        summary:response.data.processed_text,
-                        paraphrase:""
-                    },status:false
-                });
-                axios.post("https://summarizer-api-coderbros.herokuapp.com/summarize",{
-                    text:TextAreaValue,
-                    mode:"PARAPHRASE"
-                })
-                .then(response=>{
-                    toggleLoader(false);
-                    UpdateResult({
-                        text:{
-                            summary:result.text.summary,
-                            paraphrase:response.data.processed_text
-                        },status:true
-                    }); console.log(result);
-                })
-                .catch(err=>{
-                    toggleLoader(false);
-                    return ToggleDisplay("Opps! Some error has occured! Try again!");
-                })
-            })
-            .catch(err=>{
-                toggleLoader(false);
-                return ToggleDisplay("Opps! Some error has occured! Try again!");
-            });
-            return;
-        }
         axios.post("https://summarizer-api-coderbros.herokuapp.com/summarize",{
             text:TextAreaValue,
-            mode:Settings.summarize?"SUMMARY":"PARAPHRASE"
+            mode:DisplayContext==1?"SUMMARY":"PARAPHRASE"
         })
         .then(response=>{
             toggleLoader(false);
-            console.log(response);
+            ref5.current.style.visibility="hidden";
             setTimeout(()=>{
-                if(Settings.summarize&&Settings.paraphrase){
-                   return; 
-                }
-                if(Settings.summarize){
+                ref5.current.style.visibility="visible";
+                if(DisplayContext==1){
                     return UpdateResult({
                         text:{
                             summary:response.data.processed_text,
-                            paraphrase:"Select this option to view results"
+                            paraphrase:"Retry with paraphrase."
                         },
                         status:true
                     },1000);
                 }
                 UpdateResult({
                     text:{
-                        summary:"Select this option to view results",
+                        summary:"Retry with Summary.",
                         paraphrase:response.data.processed_text
                     },
                     status:true
@@ -179,7 +142,7 @@ const Summary = ({moveup}) => {
 
     useEffect(()=>{
         window.onload=()=>{
-            scroll.scrollToTop();            
+            scroll.scrollToTop();         
         }
         if(moveup){
             scroll.scrollToTop();
@@ -220,7 +183,7 @@ const Summary = ({moveup}) => {
                 <h1>Scroll Down and Slaughter your text to ashes.</h1>
             </div>
             <div className="summary_2">
-                <h1 onClick={()=>toggleLoader(!loading)}>Present your text below to filter it.</h1>
+                <h1>Present your text below to filter it.</h1>
                 <div className="sm-cat">
                     <h1 style={{
                         background:DisplayContext==1?"black":"transparent",
@@ -233,14 +196,14 @@ const Summary = ({moveup}) => {
                     }} onClick={()=>ChangeDisplay(0)}>Paraphrase</h1>
                 </div>
                 <div className="textL-disp">
-                    {`${TextPointer}/${Settings.paraphrase?150:600}`}
+                    {`${TextPointer}/${DisplayContext==0?150:600}`}
                 </div>
                 <div className="summary_2-1">
                     <textarea placeholder="Type or paste your text here."
                     disabled={Disable}
                     onChange={HandleChange}></textarea>
                     <div>
-                        <p style={{
+                        <p ref={ref5} style={{
                             visibility:loading?"hidden":"visible",
                             opacity:result.status?1:0.4
                         }}>{
@@ -269,18 +232,6 @@ const Summary = ({moveup}) => {
                     }}/>
                 </div>
                 <button onClick={HandleSubmit}>Process</button>
-            </div>
-            <div className="setting-box" ref={ref4}>
-                <div>
-                    <input type="checkbox" defaultChecked={Settings.summarize}
-                    onChange={()=>UpdateSettings({...Settings,summarize:!Settings.summarize})}/>
-                    <h2>Summarize[500 Chars]</h2>
-                </div>
-                <div>
-                    <input type="checkbox" defaultChecked={Settings.paraphrase}
-                    onChange={()=>UpdateSettings({...Settings,paraphrase:!Settings.paraphrase})}/>
-                    <h2>Paraphrase[100 Chars]</h2>
-                </div>
             </div>
             <div className="loaderbars" style={{visibility:loading?"visible":"hidden"}}>
                     <img src={bar} alt=""
