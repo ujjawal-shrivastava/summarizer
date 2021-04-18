@@ -16,6 +16,8 @@
   without much efforts and so that is where our site comes to rescue.
 </p>
 <br/>
+<p><a href="https://summarizing-samurai.netlify.app/summary"> View Demo </a></p>
+<br/>
 <h2>Some Screen-Shots of our site</h2>
 <p align="center">
   <img src="https://github.com/ujjawal-shrivastava/summarizer/blob/main/src/ScreenShots/ss1.png" width="350" title="hover text">
