@@ -1,6 +1,6 @@
 <h1>The Summarizing Samurai</h1>
 <br/>
-<h2>Welcome to your one stop destination to increase your productivity.</h2>
+<h2>Welcome to your one stop destination to increasing your productivity.</h2>
 <p>
   Running out of time? and still got a lot text to read? Well,worry not
   people cause we've got something for ya! The Summarizing Samurai is a
