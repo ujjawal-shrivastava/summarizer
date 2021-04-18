@@ -26,9 +26,9 @@
 <br/>
 <h2>Local Installation procedure</h2>
 <h3>To run the site locally please follow these steps:</h3>
-<p>1.)Clone the github repo into any folder of your choice.[Suppose you created a folder "test"].</p>
-<p>2.)"cd" into that folder and after that "cd" into the folder "summarizer"[Do this step as "cd test" after that "cd summarizer" on your terminal/cmd].</p>
-<p>3.)Once you're inside the <code>"summarizer"</code> folder, run the command "npm i" and wait for a few seconds.</p>
-<p>4.)After installation, run "npm start" to run the app.</p>
+<p>1.)Clone the github repo into any folder of your choice.[Suppose you created a folder <code>test</code>].</p>
+<p>2.)<code>cd</code> into that folder and after that <code>cd</code> into the folder <code>summarizer</code> [Do this step as <code>cd test</code> after that <code>cd summarizer</code> on your terminal/cmd].</p>
+<p>3.)Once you're inside the <code>summarizer</code> folder, run the command <code>npm i</code> and wait for a few seconds.</p>
+<p>4.)After installation, run <code>npm start</code> to run the app.</p>
 <br/>
 <h1>Enjoy, and please provide feedback!</h1>
